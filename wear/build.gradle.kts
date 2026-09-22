@@ -2,7 +2,12 @@ plugins { id("com.android.application"); kotlin("android"); id("org.jetbrains.ko
 android {
     namespace = "dev.hamfist.wear"
     compileSdk = 36
-    defaultConfig { applicationId = "dev.hamfist"; minSdk = 30; targetSdk = 36; versionCode = 1; versionName = "0.1.0"; testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner" }
+    defaultConfig {
+        applicationId = "dev.hamfist"; minSdk = 30; targetSdk = 36
+        versionCode = providers.gradleProperty("hamfistVersionCode").get().toInt()
+        versionName = providers.gradleProperty("hamfistVersionName").get()
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
     buildFeatures { compose = true }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
 }

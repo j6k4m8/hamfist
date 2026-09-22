@@ -18,6 +18,8 @@ Native Kotlin / Jetpack Compose, Material You on phones, and Wear Material 3 on 
 
 ## Build and install
 
+Download the phone and watch APKs from [GitHub Releases](https://github.com/j6k4m8/hamfist/releases). Pushing a new `vX.Y.Z` tag runs tests, builds and signs both APKs, and attaches them with checksums to a release. See [release instructions](docs/RELEASING.md) for signing and versioning. A debug installation must be uninstalled once before switching to a release APK because the signing certificates differ.
+
 Use JDK 21 (Android Studio’s bundled JBR works), Android SDK 36 and the included Gradle wrapper. Set `ANDROID_HOME` or create an untracked `local.properties` with `sdk.dir=/path/to/Android/sdk`.
 
 ```sh
