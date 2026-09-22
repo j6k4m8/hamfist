@@ -2,7 +2,11 @@ plugins { id("com.android.application"); kotlin("android"); id("org.jetbrains.ko
 android {
     namespace = "dev.hamfist.phone"
     compileSdk = 36
-    defaultConfig { applicationId = "dev.hamfist"; minSdk = 30; targetSdk = 36; versionCode = 1; versionName = "0.1.0" }
+    defaultConfig {
+        applicationId = "dev.hamfist"; minSdk = 30; targetSdk = 36
+        versionCode = providers.gradleProperty("hamfistVersionCode").get().toInt()
+        versionName = providers.gradleProperty("hamfistVersionName").get()
+    }
     buildFeatures { compose = true }
     compileOptions { sourceCompatibility = JavaVersion.VERSION_21; targetCompatibility = JavaVersion.VERSION_21 }
 }

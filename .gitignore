@@ -8,3 +8,6 @@ local.properties
 *.jks
 *.keystore
 artifacts/
+.signing/
+dist/
+__pycache__/
